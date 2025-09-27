@@ -102,8 +102,8 @@ body {
   .header.header-responsive {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
   }
 }
 
@@ -444,7 +444,7 @@ body {
 }
 
 .header .header-logo-mobile {
-  width: 80px;
+  width: 120px;
   height: 52px;
 }
 
@@ -799,11 +799,17 @@ body {
   flex-shrink: 0;
 }
 
-.tournament-footer .carousel-slide .footer-left .logo-2025 {
+.tournament-footer .carousel-slide .footer-left .container-logo-2025 {
   width: auto;
   height: auto;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+.tournament-footer .carousel-slide .footer-left .container-logo-2025 .logo-2025 {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  object-fit: cover;
 }
 
 .tournament-footer .carousel-slide .footer-left .tournament-info {
@@ -1436,11 +1442,20 @@ body {
   flex-shrink: 0;
 }
 
-.tournament-footer-mobile .carousel-slide .footer-left .logo-2025 {
-  width: auto;
-  height: auto;
+.tournament-footer-mobile .carousel-slide .footer-left .container-logo-2025 {
+  width: 52% !important;
+  height: 100%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+.tournament-footer-mobile .carousel-slide .footer-left .container-logo-2025 .logo-2025 {
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  object-fit: fill;
+  flex-shrink: 0 !important;
 }
 
 .tournament-footer-mobile .carousel-slide .footer-left .tournament-info {
@@ -1478,11 +1493,6 @@ body {
   }
 }
 
-.tournament-footer-mobile .carousel-slide .footer-left .logo-2025 {
-  width: 38% !important;
-  object-fit: cover !important;
-  flex-shrink: 0 !important;
-}
 
 @media (min-width: 650px) {
   .tournament-footer-mobile {
@@ -1565,13 +1575,18 @@ body {
   /* Подсветка границы */
 }
 
-.content .content_wostour .content_wostour_chat {
+.content .content_wostour .container_content_wostour_chat {
   width: 50%;
   /* Занимает 50% ширины родителя */
   height: auto;
-  object-fit: contain;
+}
+
+.content .content_wostour .content_wostour_chat {
+  width: 100%;
+  object-fit: cover;
   /* Чтобы изображение сохраняло пропорции */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 @media (max-width: 991px) {
@@ -2054,17 +2069,108 @@ body {
   }
 }
 
-.why-choose-us .grid-container .side-card img.moni {
+.why-choose-us .grid-container .side-card {
+  position: relative; /* Для правильного позиционирования, если нужно */
+  overflow: visible; /* Убедимся, что овал не обрезается родительским контейнером */
+}
+
+.why-choose-us .grid-container .side-card .container_moni1 {
   width: auto;
   height: 100%;
   max-width: 250px;
   flex-shrink: 0;
   margin: 0;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: relative; /* Позиционируем относительно этого контейнера */
+  margin-left: 3rem;
+  overflow: visible;
+}
+
+.why-choose-us .grid-container .side-card .container_moni1 img.moni {
+  position: relative;
+  z-index: 1; /* Убедимся, что img выше овала */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.why-choose-us .grid-container .side-card .container_moni1::before {
+  content: '';
+  position: absolute;
+  z-index: 0; /* За img */
+  top: 3%; /* Больше отступов для выхода за границы */
+  left: 5%;
+  width: 90%; /* Ещё шире */
+  height: 90%; /* Для овальности */
+  background-color: #0732b1;
+  border-radius: 50%;
+  filter: blur(20px); /* Увеличили размытие */
+  opacity: 0.7; /* Повысили видимость */
+}
+
+.why-choose-us .grid-container .side-card .container_moni1 img.moni:hover {
+  transform: scale(1.05); 
+  cursor: pointer;
+}
+
+.why-choose-us .grid-container .side-card .container_moni2 {
+  width: auto;
+  height: 100%;
+  max-width: 250px;
+  flex-shrink: 0;
+  margin: 0;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: relative; /* Позиционируем относительно этого контейнера */
+  margin-left: 3rem;
+  overflow: visible;
+}
+
+.why-choose-us .grid-container .side-card .container_moni2 img.moni {
+  position: relative;
+  z-index: 1; /* Убедимся, что img выше овала */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-choose-us .grid-container .side-card .container_moni2::before {
+  content: '';
+  position: absolute;
+  z-index: 0; /* За img */
+  top: 3%; /* Больше отступов для выхода за границы */
+  left: 5%;
+  width: 90%; /* Ещё шире */
+  height: 90%; /* Для овальности */
+  background-color: #0732b1;
+  border-radius: 50%;
+  filter: blur(20px); /* Увеличили размытие */
+  opacity: 0.7; /* Повысили видимость */
+}
+
+.why-choose-us .grid-container .side-card .container_moni2 img.moni:hover {
+  transform: scale(1.05); 
+  cursor: pointer;
+}
+
+
+
 @media (max-width: 991px) {
-  .why-choose-us .grid-container .side-card img.moni {
+  .why-choose-us .grid-container .side-card .container_moni1{
+    margin-left: 0.5rem;
+
+  }
+  .why-choose-us .grid-container .side-card .container_moni2{
+    margin-left: 0.5rem;
+
+  }
+  .why-choose-us .grid-container .side-card .container_moni1 img.moni {
+    height: auto;
+    max-width: 240px;
+    /* Уменьшаем максимальную ширину */
+    margin-bottom: 0.5rem;
+  }
+
+  .why-choose-us .grid-container .side-card .container_moni2 img.moni {
     height: auto;
     max-width: 240px;
     /* Уменьшаем максимальную ширину */
@@ -2073,31 +2179,49 @@ body {
 }
 
 @media (max-width: 480px) {
-  .why-choose-us .grid-container .side-card img.moni {
-    max-width: 180px;
+  .why-choose-us .grid-container .side-card .container_moni1 img.moni {
+    max-width: 150px;
+    /* Еще меньше для очень маленьких экранов */
+  }
+  .why-choose-us .grid-container .side-card .container_moni2 img.moni {
+    max-width: 150px;
     /* Еще меньше для очень маленьких экранов */
   }
 }
 
 @media (min-width: 3840px) {
-  .why-choose-us .grid-container .side-card img.moni {
+  .why-choose-us .grid-container .side-card .container_moni1 img.moni {
+    max-width: 800px !important;
+  }
+  .why-choose-us .grid-container .side-card .container_moni2 img.moni {
     max-width: 800px !important;
   }
 }
 
 @media (min-width: 2560px) {
-  .why-choose-us .grid-container .side-card img.moni {
+  .why-choose-us .grid-container .side-card .container_moni1 img.moni {
+    max-width: 400px !important;
+  }
+   .why-choose-us .grid-container .side-card .container_moni2 img.moni {
     max-width: 400px !important;
   }
 }
 
 @media (min-width: 1080px) {
-  .why-choose-us .grid-container .side-card img.moni {
+  .why-choose-us .grid-container .side-card .container_moni1 img.moni {
+    max-width: 200px !important;
+  }
+   .why-choose-us .grid-container .side-card .container_moni2 img.moni {
     max-width: 200px !important;
   }
 }
 
-.why-choose-us .grid-container .side-card img.moni:hover {
+.why-choose-us .grid-container .side-card .container_moni1 img.moni:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.why-choose-us .grid-container .side-card .container_moni2 img.moni:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -2401,9 +2525,10 @@ body {
   transition: transform 0.3s ease;
 }
 
- .main-footer .footer-nav .navbar-nav .nav-item .dropdown {
-    margin-right: -15px;
-  }
+.main-footer .footer-nav .navbar-nav .nav-item .dropdown {
+  margin-right: -15px;
+}
+
 .main-footer .footer-links-mobile {
   display: none;
 }
@@ -2587,6 +2712,7 @@ body {
     margin-left: 0;
     margin-right: 0;
   }
+
   .main-footer .footer-nav .navbar-nav .nav-item .dropdown {
     margin-right: -10px;
   }
@@ -2913,11 +3039,12 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
   }
-  .header .selected-flag .selected-flag-icon{
+
+  .header .selected-flag .selected-flag-icon {
     width: 50px;
     height: 50px;
   }
-  
+
 
   .header .mobile-header-right .mobile-flag:hover {
     transform: scale(1.1) translateY(-2px);
