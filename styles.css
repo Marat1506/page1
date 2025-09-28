@@ -413,6 +413,9 @@ body {
   .header .navbar .navbar-nav .nav-link {
     font-size: calc(16px + (100vw - 1536px) * 0.01);
   }
+  .header .navbar-nav .nav-item .dropdown .drop-btn{
+    font-size: calc(16px + (100vw - 1536px) * 0.01);
+  }
 }
 
 @media (min-width: 3840px) {
@@ -1005,11 +1008,23 @@ body {
   .tournament-footer .carousel-slide .footer-left .tournament-info {
     margin-top: calc(2rem + (100vw - 1536px) * 0.02);
   }
+
 }
 
 @media (min-width: 3840px) {
   .tournament-footer .carousel-slide .footer-left .tournament-info {
     margin-left: 5rem;
+  }
+  .tournament-footer .carousel-slide .footer-left .container-logo-2025 .logo-2025{
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+}
+@media (min-width: 2500px) {
+  
+  .tournament-footer .carousel-slide .footer-left .container-logo-2025 .logo-2025{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
   }
 }
 
@@ -1024,6 +1039,10 @@ body {
   .tournament-footer .carousel-slide .footer-left .tournament-info .date {
     font-size: calc(15px + (100vw - 1536px) * 0.005);
     margin-bottom: calc(15px + (100vw - 1536px) * 0.005);
+  }
+  .tournament-footer .carousel-slide .footer-left .container-logo-2025 .logo-2025{
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
   }
 }
 
