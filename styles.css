@@ -31,7 +31,6 @@ body {
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000;
@@ -42,7 +41,7 @@ body {
   .main-with-bg {
     height: 100dvh;
     background-image: url("../assets/main_background_mobile.png");
-    transition: height 0.1s ease-out;
+    transition: height 0.3s ease-out;
   }
 }
 
@@ -1083,6 +1082,7 @@ body {
   backdrop-filter: blur(2px);
   z-index: 2;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 @media (max-width: 991.98px) {
@@ -3984,9 +3984,16 @@ body {
 
 
 .container-cards {
-  margin-top: 4rem;
+  margin-top: 2rem;
 
 }
+
+@media(max-width:991px) {
+  .container-cards {
+    margin-top: 1rem !important;
+  }
+}
+
 
 .container-cards .container-cards-title {
   font-size: 43px;
@@ -4099,6 +4106,12 @@ body {
 .cards3-container {
   width: 100%;
   margin-top: 1.5rem;
+}
+
+@media(max-width:991px) {
+  .cards3-container {
+    margin-top: 0.2rem !important;
+  }
 }
 
 .cards3 {
