@@ -31,7 +31,7 @@ body {
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  transform: translateZ(0);
+  /* transform: translateZ(0); */
   backface-visibility: hidden;
   perspective: 1000;
   will-change: transform;
@@ -41,7 +41,7 @@ body {
   .main-with-bg {
     height: 100dvh;
     background-image: url("../assets/main_background_mobile.png");
-    transition: height 0.3s ease-out;
+    transition: 0.01s ease-out;
   }
 }
 
@@ -89,6 +89,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
 }
+
 
 @media (min-width: 3840px) {
   .header {
@@ -597,19 +598,20 @@ body {
 
 /* Mobile-specific styles */
 @media (max-width: 991.98px) {
+
   .header .info_main {
     display: block;
     width: 100%;
   }
 
-  .header .navbar-collapse {
+  /* .header .navbar-collapse {
     display: block;
     margin-top: 4rem;
     position: fixed;
     top: 0;
     right: -100%;
     width: 320px;
-    height: 93vh;
+    height: 100vh;
     background: rgb(15, 16, 16) !important;
     color: white;
     backdrop-filter: blur(20px);
@@ -620,12 +622,80 @@ body {
     display: flex;
     flex-direction: column;
     align-items: start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  } */
+  .header .navbar-collapse {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100dvw;
+    height: 100dvh;
+    background: rgb(15, 16, 16) !important;
+    color: white;
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0;
+    /* padding-bottom: 4rem; */
+    z-index: 9999;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    overflow-y: scroll;
+    /* Разрешаем прокрутку */
+    -webkit-overflow-scrolling: touch;
+    /* Убираем margin-top чтобы избежать прокрутки страницы */
+    margin-top: 4rem;
+  }
 
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* height: 100dvh; */
+    padding-bottom: 2rem;
+    /* чтобы заняло весь экран */
+    overflow-y: auto;
+    /* включаем прокрутку внутри */
+    -webkit-overflow-scrolling: touch;
+    /* плавная прокрутка на iOS */
+    background: white;
+    /* или любой фон */
+    z-index: 1050;
+    /* поверх остального контента */
+  }
+
+  /* Чтобы не прыгал контент при открытии */
+  body {
+    overscroll-behavior: contain;
+  }
+
+  .header .navbar-collapse::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .header .navbar-collapse.show::before {
+    left: 0;
   }
 
   .header .navbar-collapse.show {
     right: 0;
   }
+
+  .header .navbar-collapse.show {
+    right: 0;
+  }
+
 
   .header .navbar-collapse .info_main {
     margin-top: 2rem;
@@ -645,7 +715,7 @@ body {
     /* padding-left: 1.5rem;
     padding-right: 1.5rem; */
     padding-top: 0.6rem;
-    margin-top: 0.7rem;
+    margin-top: 0.2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -966,6 +1036,9 @@ body {
 
 
 }
+
+/* Стили для мобильного меню настроек */
+
 
 @media(max-width: 576px) {
   .sidebar_footer .sidebar_footer_main .hero-btn-secondary {
@@ -1608,7 +1681,7 @@ body {
 
 /* CSS remains unchanged */
 .tournament-footer {
-  position: sticky;
+  position: relative;
   display: flex;
   width: 100%;
   height: 169px;
@@ -1625,6 +1698,15 @@ body {
     display: none;
   }
 }
+
+@media (max-width: 991.98px) {
+  .tournament-footer {
+    position: relative;
+    /* Изменяем с sticky на relative для мобильных, чтобы логика JS работала корректно */
+  }
+}
+
+
 
 .tournament-footer .carousel-container {
   width: 70%;

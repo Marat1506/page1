@@ -125,19 +125,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-   const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarNav = document.getElementById('navbarNav');
     const menuIcon = navbarToggler.querySelector('.menu-icon');
-    
+
     if (navbarToggler && navbarNav && menuIcon) {
         const originalSrc = menuIcon.src;
         const closeSrc = '/assets/close.png'; // путь к иконке крестика
-        
+
         navbarNav.addEventListener('show.bs.collapse', function () {
             menuIcon.src = closeSrc;
             menuIcon.alt = 'Закрыть';
         });
-        
+
         navbarNav.addEventListener('hide.bs.collapse', function () {
             menuIcon.src = originalSrc;
             menuIcon.alt = 'Меню';
@@ -182,15 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const settingsMenu = document.querySelector('.settings-dropdown');
         const targetBlock = document.querySelector('.info_main_block_one');
         const isMobile = window.innerWidth < 992;
-        
+
         if (settingsMenu && targetBlock) {
             const isInSidebar = settingsMenu.closest('#navbarNav');
-            
+
             if (isMobile && !isInSidebar) {
                 // Перемещаем оригинальный элемент в сайдбар
                 targetBlock.appendChild(settingsMenu);
                 settingsMenu.classList.add('mobile-version');
-                
+
             } else if (!isMobile && isInSidebar) {
                 // Возвращаем на место в десктопной версии
                 const settingsContainer = document.querySelector('#dropdownMenuButton2').closest('.dropdown');
@@ -207,13 +207,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Инициализация при загрузке
     moveSettingsMenuAlternative();
-    
+
     // Обработчик изменения размера окна
     window.addEventListener('resize', moveSettingsMenuAlternative);
-    
+
     // Также обновляем при открытии/закрытии сайдбара (на всякий случай)
     if (navbarNav) {
         navbarNav.addEventListener('show.bs.collapse', moveSettingsMenuAlternative);
         navbarNav.addEventListener('hide.bs.collapse', moveSettingsMenuAlternative);
     }
+
+
+    const navbarCollapse = document.getElementById('navbarNav');
+    let scrollPosition = 0;
+
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener('show.bs.collapse', function () {
+            // Сохраняем текущую позицию скролла
+            scrollPosition = window.pageYOffset;
+
+            // Фиксируем body
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.style.width = '100%';
+            document.body.style.overflow = 'hidden';
+        });
+
+        navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+            // Получаем top
+            const top = document.body.style.top;
+
+            // Сбрасываем стили
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+
+            // Возвращаем страницу на то же место без скачков
+            window.scrollTo({
+                top: -parseInt(top || '0'),
+                behavior: 'instant'
+            });
+        });
+    }
+
+
+
+
+
+
+
 });
