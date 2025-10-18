@@ -1,6 +1,10 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
 
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
 html {
   overflow-x: hidden;
   max-width: 100vw;
@@ -12,7 +16,10 @@ body {
   background-color: rgb(15, 16, 16);
   margin: 0;
   padding: 0;
-  font-family: var(--bs-body-font-family, "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji");
+  font-family: 'Inter', sans-serif !important;
+
+  /* font-family: var(--bs-body-font-family, "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji");
+   */
   max-width: 100vw;
   box-sizing: border-box;
 }
@@ -88,6 +95,24 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
+}
+
+.header_sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 10; /* Выше контента sidebar, но ниже общего z-index sidebar */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  align-items: center;
 }
 
 
@@ -604,27 +629,7 @@ body {
     width: 100%;
   }
 
-  /* .header .navbar-collapse {
-    display: block;
-    margin-top: 4rem;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 320px;
-    height: 100vh;
-    background: rgb(15, 16, 16) !important;
-    color: white;
-    backdrop-filter: blur(20px);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0;
-    z-index: 9999;
-    transition: right 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  } */
+
   .header .navbar-collapse {
     display: block;
     position: fixed;
@@ -643,11 +648,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: start;
-    overflow-y: scroll;
+    overflow-y: auto;
     /* Разрешаем прокрутку */
     -webkit-overflow-scrolling: touch;
     /* Убираем margin-top чтобы избежать прокрутки страницы */
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
   }
 
   .navbar-collapse {
@@ -666,6 +671,35 @@ body {
     z-index: 1050;
     /* поверх остального контента */
   }
+
+ .header .navbar-collapse #navbarNav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .header .navbar-nav {
+    flex: 1;
+    overflow-y: visible;
+  }
+  .sidebar_footer,
+  .main-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .autorization {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+    margin-top: 4em;
+  }
+
+  
 
   /* Чтобы не прыгал контент при открытии */
   body {
@@ -975,17 +1009,19 @@ body {
   .header .navbar-nav .nav-item .nav-link:first-child {
     color: rgba(165, 165, 165, 1) !important;
   }
+
   .header .navbar-nav .main-footer .nav-item .nav-link:first-child {
     color: white !important;
   }
 
-   .header .navbar-nav .main-footer .nav-item .nav-link{
+  .header .navbar-nav .main-footer .nav-item .nav-link {
     color: white !important;
   }
 
   .header .navbar-nav .nav-group .nav-item .nav-link:first-child {
     color: white !important;
   }
+
   .header .navbar-nav .main-footer .nav-group .nav-item .nav-link:first-child {
     color: white !important;
   }
@@ -1129,10 +1165,10 @@ body {
 }
 
 @media (max-width: 480px) {
-  .dark-toggle-btn+.dark-toggle-btn {
+  /* .dark-toggle-btn+.dark-toggle-btn {
     transform: translateX(-2rem);
-    /* Перекрытие визуально, без расширения ширины */
-  }
+    
+  } */
 
   .dark-btn-inner {
     font-size: 14px;
@@ -1140,17 +1176,17 @@ body {
 }
 
 @media (max-width: 410px) {
-  .dark-toggle-btn+.dark-toggle-btn {
+  /* .dark-toggle-btn+.dark-toggle-btn {
     transform: translateX(-1rem);
-    /* Перекрытие визуально, без расширения ширины */
-  }
+   
+  } */
 
   .dark-btn-inner {
     font-size: 12px;
   }
 }
 
-/* Новый контейнер для всего компонента с отступами слева/справа */
+
 .sidebar-auth-container {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1158,34 +1194,25 @@ body {
   box-sizing: border-box;
 }
 
-/* Контейнер с двумя кнопками для sidebar (уникальные классы) */
 .dark-auth-toggle {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Изменено: flex-start вместо center, чтобы заполнить слева направо */
   align-items: stretch;
-  /* Как в примере для точного выравнивания */
   width: 100%;
-  max-width: 640px;
-  /* Как в примере */
+  max-width: 100%; /* Изменено: 100% вместо 640px, чтобы заполнить всю ширину контейнера */
   margin-bottom: -20px;
-  /* Как в примере */
   z-index: 2;
   position: relative;
   margin-top: 2rem;
   overflow: hidden;
-  /* Обрезает перекрытие, предотвращает overflow */
 }
 
-/* Кнопки как ссылки с кнопками внутри (уникальные классы для sidebar) */
 .dark-toggle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  /* Как в примере */
   border: none !important;
   background-color: rgba(39, 40, 40, 1);
-  /* Тёмный фон для неактивной */
   border-radius: 22px;
   transition: all 0.3s ease;
   position: relative;
@@ -1197,14 +1224,25 @@ body {
   box-sizing: border-box;
 }
 
-/* Внутренние кнопки (уникальные классы для sidebar) */
+/* Первая кнопка (Вход) — 40% ширины */
+.dark-auth-toggle .dark-toggle-btn:first-child {
+  flex: 4;
+}
+
+.navbar-collapse .navbar-nav .nav-group .nav-item .dropdown .dropdown-menu .dropdown-item {
+  color: white;
+}
+/* Вторая кнопка (Создать аккаунт) — 60% ширины */
+.dark-auth-toggle .dark-toggle-btn:last-child {
+  flex: 6;
+}
+
 .dark-btn-inner {
   width: 100%;
   height: 100%;
   border: none !important;
   background: transparent;
   color: #fff;
-  /* Белый текст */
   font-weight: 500;
   font-size: 16px;
   border-radius: 22px;
@@ -1217,48 +1255,71 @@ body {
   box-sizing: border-box;
 }
 
-/* Правая немного заходит на левую (как в примере, но меньше для sidebar) */
-.dark-toggle-btn+.dark-toggle-btn {
-  margin-left: -1.5rem;
-  /* Чутье перекрытие, как просили; меньше чем -3rem в примере, чтобы не выходить за границу */
+.dark-toggle-btn + .dark-toggle-btn {
+  position: relative; /* Добавлено: для transform без влияния на layout */
+  transform: translateX(-1.5rem);
 }
-
 @media (max-width: 768px) {
-  .dark-toggle-btn+.dark-toggle-btn {
-    margin-left: -1rem;
-    /* Ещё меньше на мобильных */
+  .dark-toggle-btn + .dark-toggle-btn {
+    transform: translateX(-1rem); /* Уменьшено для мобильного */
   }
 
   .dark-btn-inner {
     font-size: 13px;
+    border-radius: 18px;
+  }
+
+  .dark-auth-toggle .dark-toggle-btn:first-child {
+    flex: 4;
+  }
+
+  .dark-auth-toggle .dark-toggle-btn:last-child {
+    flex: 6;
   }
 }
 
 @media (max-width: 480px) {
-  .dark-toggle-btn+.dark-toggle-btn {
-    margin-left: -0.5rem;
-    /* Минимальное для узких экранов */
+  .dark-toggle-btn + .dark-toggle-btn {
+    transform: translateX(-0rem); /* Уменьшено для маленьких экранов */
   }
 
   .dark-auth-toggle {
     margin-left: 0;
-    /* Убираем дополнительные margins, т.к. контейнер уже имеет padding */
     margin-right: 0;
+  }
+   .dark-btn-inner {
+    border-radius: 13px;
+  }
+
+  .dark-auth-toggle .dark-toggle-btn:first-child {
+    flex: 4;
+  }
+
+  .dark-auth-toggle .dark-toggle-btn:last-child {
+    flex: 6;
   }
 }
 
 @media (max-width: 410px) {
-  .dark-toggle-btn+.dark-toggle-btn {
-    margin-left: -1rem;
-    /* Без перекрытия на очень узких */
+  .dark-toggle-btn + .dark-toggle-btn {
+    transform: translateX(-0rem); /* Восстановлено для очень маленьких */
   }
 
   .dark-btn-inner {
     font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .dark-auth-toggle .dark-toggle-btn:first-child {
+    flex: 4;
+  }
+
+  .dark-auth-toggle .dark-toggle-btn:last-child {
+    flex: 6;
   }
 }
 
-/* Активная кнопка сверху (чёрный фон, белый текст, как просили) */
+/* Активная кнопка сверху (чёрный фон, белый текст) */
 .dark-toggle-btn.active {
   background-color: #000 !important;
   z-index: 3;
@@ -1285,6 +1346,7 @@ body {
   padding: 0 1.5rem;
   padding-top: 2rem;
 
+
   /* Отступ снизу для симметрии */
 
   /* Обеспечиваем минимальную высоту */
@@ -1295,9 +1357,8 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.5rem;
     align-items: center;
-    margin-top: 1rem;
   }
 
 }
@@ -1326,10 +1387,21 @@ body {
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
+  font-size: 12px;
   height: 42px;
   text-decoration: none;
   cursor: pointer;
   padding: 0;
+}
+
+/* Первая кнопка (Вход) — 40% ширины */
+.auth-toggle .toggle-btn:first-child {
+  flex: 4; /* 40% в flex-grow пропорции */
+}
+
+/* Вторая кнопка (Создать аккаунт) — 60% ширины, растягивается */
+.auth-toggle .toggle-btn:last-child {
+  flex: 6; /* 60% в flex-grow пропорции */
 }
 
 /* Внутренние кнопки */
@@ -1365,9 +1437,9 @@ body {
   }
 }
 
-.form-block {
+/* .form-block {
   margin-top: 2rem;
-}
+} */
 
 /* активная кнопка сверху */
 .toggle-btn.active {
@@ -1391,11 +1463,18 @@ body {
   z-index: 1;
 }
 
+/* @media (max-width: 770px) {
+  .auth-box {
+    padding-top: 2rem;
+    max-height: 520px;
+  }
+} */
+
 
 /* Поля формы */
 .form-control {
   background-color: transparent;
-  border: 1px solid white;
+  border: 1.5px solid white;
   border-radius: 20px;
   color: #fff;
   padding: 12px 16px;
@@ -1421,13 +1500,14 @@ body {
   border-radius: 20px;
   padding: 12px;
   width: 100%;
-  margin-top: 3.2rem;
+  margin-top: 1.2rem;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 13px;
 }
 
 .submit-btn:hover {
@@ -1436,16 +1516,19 @@ body {
 
 .vhod_info {
   gap: 1rem;
-  margin-top: 3rem;
+  margin-top: 1.2rem;
 }
 
 .vhod_info p {
   margin-bottom: 0 !important;
+  font-weight: 300;
 }
 
 .vhod_info a {
   text-decoration: none;
   color: #3773ff;
+  font-weight: 300;
+  
 }
 
 
@@ -1477,6 +1560,11 @@ body {
     backdrop-filter: blur(10px);
     white-space: nowrap;
     font-size: 12px !important;
+    font-weight: 400;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(1) .hero-btn-secondary {
@@ -1499,6 +1587,13 @@ body {
   .header .navbar-collapse {
     width: 100%;
   }
+    .vhod_info p {
+    font-size: 12px;
+  }
+
+  .vhod_info a {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1509,11 +1604,11 @@ body {
   }
 
   .vhod_info p {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .vhod_info a {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
@@ -1528,13 +1623,13 @@ body {
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(2) .hero-btn-secondary {
-    padding-left: 1.8rem !important;
-    padding-right: 1.8rem !important;
+    padding-left: 2.2rem !important;
+    padding-right: 1.2rem !important;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(3) .hero-btn-secondary {
-    padding-left: 1.8rem !important;
-    padding-right: 1.8rem !important;
+    padding-left: 2.2rem !important;
+    padding-right: 2.2rem !important;
   }
 }
 
@@ -1552,18 +1647,18 @@ body {
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(1) .hero-btn-secondary {
-    padding-left: 1.2rem !important;
-    padding-right: 1.6rem !important;
+    padding-left: 1.4rem !important;
+    padding-right: 1.4rem !important;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(2) .hero-btn-secondary {
-    padding-left: 1.4rem !important;
-    padding-right: 1.4rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(3) .hero-btn-secondary {
-    padding-left: 1.4rem !important;
-    padding-right: 1.4rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
 
   .header .navbar-collapse .info_main .info_main_block_one_profile .info_main_block_one_profile_text {
@@ -3105,6 +3200,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0.5rem 0.5rem;
   }
 
   .content .content_wostour .container_content_wostour_chat {
@@ -3124,6 +3220,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-weight: 600;
   /* Центрируем содержимое по вертикали */
 }
 
@@ -3153,12 +3250,48 @@ body {
     width: 100%;
     align-items: center;
     text-align: center;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+
   }
 }
 
 @media (max-width: 991px) {
   .content .content_wostour .wostour-text p {
-    font-size: 17px !important;
+    font-size: 18.04px !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .content .content_wostour {
+    gap: 0;
+  }
+
+  .content .content_wostour .wostour-text .btn {
+    width: 255px !important;
+    height: 44px;
+    font-size: 13.5px;
+    border-radius: 13px;
+    margin-bottom: 2rem;
+    margin-top: 1.4rem;
+  }
+
+
+  .content .content_wostour .wostour-text .p_one {
+    line-height: 1.2;
+  }
+
+
+  .content .features-cards .feature-card {
+    min-height: 160px !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .content .content_wostour .wostour-text .p_two {
+    font-size: 11.16px !important;
+    font-weight: 400;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -3252,10 +3385,44 @@ body {
   }
 }
 
+.content .features-cards .feature-card-footer .medal {
+  width: 35px;
+  height: 52px;
+}
+
+.content .features-cards .feature-card-footer .pushka {
+  width: 58px;
+  height: 32px;
+}
+
+.content .features-cards .feature-card-footer .borba {
+  width: 53px;
+  height: 43px;
+}
+
+@media (max-width: 768px) {
+  .content .features-cards .feature-card-footer .medal {
+    width: 28px;
+    height: 41px;
+  }
+
+  .content .features-cards .feature-card-footer .pushka {
+    width: 43px;
+    height: 24px;
+  }
+
+  .content .features-cards .feature-card-footer .borba {
+    width: 47px;
+    height: 36px;
+  }
+}
+
+
 .content .features-cards .feature-card-footer a .bi-arrow-right {
   transition: all 0.3s ease;
   cursor: pointer;
   color: white;
+  width: 43px !important;
 }
 
 .content .features-cards .feature-card-footer a .bi-arrow-right:hover {
@@ -3288,6 +3455,7 @@ body {
 
 .content .features-cards .feature-card {
   flex: 1;
+  height: 100%;
   min-height: 300px;
   display: flex;
   flex-direction: column;
@@ -3296,15 +3464,26 @@ body {
 
 }
 
+
+
+.content .features-cards>.feature-card:nth-child(n+4) {
+  background-color: #246bfd !important;
+}
+
+
+
+
 .content .features-cards .feature-card .p_one {
   font-size: 28px;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .content .features-cards .feature-card .p_two {
   color: rgba(165, 165, 165, 1);
   font-weight: 400;
   font-size: 16px;
+  margin-bottom: 0;
 }
 
 .content .features-cards .feature-card .p_two a {
@@ -3329,8 +3508,10 @@ body {
 }
 
 .content .features-cards .feature-card .feature-card-footer {
-  margin-top: auto;
+  margin-top: 4rem;
   padding-top: 1rem;
+  flex-shrink: 0; /* Добавлено: footer не сжимается */
+  height: 70px;
 }
 
 @media (min-width: 1080px) {
@@ -3355,6 +3536,11 @@ body {
   .content .features-cards .feature-card p:first-child {
     font-size: calc(28px + (100vw - 991px) * 0.01) !important;
   }
+
+  .content .features-cards .feature-card .feature-card-footer {
+    margin-top: 0.7rem;
+    padding-top: 1rem;
+  }
 }
 
 @media (min-width: 1537px) {
@@ -3373,6 +3559,13 @@ body {
   .content .features-cards .feature-card p:nth-child(2) {
     font-size: calc(20px + (100vw - 991px) * 0.01) !important;
   }
+}
+
+@media (max-width: 576px) {
+  .content .features-cards .feature-card p:nth-child(2) {
+    font-size: 11.16px !important;
+  }
+
 }
 
 @media (min-width: 1537px) {
@@ -3450,7 +3643,7 @@ body {
 
 @media (max-width: 768px) {
   .why-choose-us .why-choose-us-title {
-    font-size: 22px;
+    font-size: 27px;
     text-align: center;
   }
 }
@@ -3530,7 +3723,7 @@ body {
     /* Одна колонка на мобильных */
     grid-template-rows: auto;
     /* Автоматическая высота строк */
-    gap: 1.5rem;
+    gap: 1rem;
   }
 }
 
@@ -3658,6 +3851,7 @@ body {
 @media (max-width: 991px) {
   .why-choose-us .grid-container .side-card {
     align-items: center;
+    justify-content: center;
     height: auto;
     order: 2;
     /* Второй блок */
@@ -3673,8 +3867,13 @@ body {
 }
 
 .why-choose-us .grid-container .side-card {
+  display: flex;
+  gap: 1.2rem;
   position: relative;
   overflow: visible;
+  align-items: center;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
   /* Assuming flex is applied here or higher up */
 }
 
@@ -3684,18 +3883,19 @@ body {
   max-width: 250px;
   flex-shrink: 0;
   margin: 0;
-  padding-top: 1rem;
-  padding-right: 1rem;
+  /* padding-top: 1rem;
+  padding-right: 1rem; */
   padding-left: 1rem;
   position: relative;
   margin-left: 3rem;
+  display: flex;
   overflow: visible;
 }
 
 .why-choose-us .grid-container .side-card .container_moni1 .img-wrapper {
   position: relative;
   /* Pseudo-element positioned relative to this */
-  display: inline-block;
+  display: flex;
   /* Hugs the image dimensions */
   width: fit-content;
   height: fit-content;
@@ -3722,8 +3922,8 @@ body {
   /* Behind img */
   top: -8%;
   /* Slightly different offset for distinction */
-  left: -10%;
-  width: 120%;
+  left: -8%;
+  width: 116%;
   /* Slightly different size */
   height: 98%;
   /* Slightly different for ovality */
@@ -3742,21 +3942,21 @@ body {
   max-width: 250px;
   flex-shrink: 0;
   margin: 0;
-  padding-top: 1rem;
-  padding-right: 1rem;
+  /* padding-top: 1rem;
+  padding-right: 1rem; */
   padding-left: 1rem;
   position: relative;
   margin-left: 3rem;
+  display: flex;
   overflow: visible;
 }
 
 .why-choose-us .grid-container .side-card .container_moni2 .img-wrapper {
   position: relative;
   /* Pseudo-element positioned relative to this */
-  display: inline-block;
+  display: flex;
   /* Hugs the image dimensions */
-  width: fit-content;
-  height: fit-content;
+  align-items: center;
 }
 
 .why-choose-us .grid-container .side-card .container_moni2 .img-wrapper img.moni {
@@ -3803,14 +4003,12 @@ body {
     height: auto;
     max-width: 200px;
     /* Уменьшаем максимальную ширину */
-    margin-bottom: 0.5rem;
   }
 
   .why-choose-us .grid-container .side-card .container_moni2 img.moni {
     height: auto;
     max-width: 200px;
     /* Уменьшаем максимальную ширину */
-    margin-bottom: 0.5rem;
   }
 }
 
@@ -3826,13 +4024,13 @@ body {
 }
 
 @media (max-width: 480px) {
-  .why-choose-us .grid-container .side-card .container_moni1 img.moni {
-    max-width: 150px;
+  .why-choose-us .grid-container .side-card .container_moni1 .img-wrapper img.moni {
+    max-width: 125px !important;
     /* Еще меньше для очень маленьких экранов */
   }
 
-  .why-choose-us .grid-container .side-card .container_moni2 img.moni {
-    max-width: 150px;
+  .why-choose-us .grid-container .side-card .container_moni2 .img-wrapper img.moni {
+    max-width: 125px !important;
     /* Еще меньше для очень маленьких экранов */
   }
 }
@@ -3894,7 +4092,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -3907,6 +4105,7 @@ body {
   margin: 0 0 0.5rem 0;
   font-weight: 600;
   font-size: 23px;
+
   color: white;
 }
 
@@ -3915,6 +4114,11 @@ body {
     font-size: 28px;
     /* Немного уменьшаем заголовки */
     margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .why-choose-us .grid-container .side-card .card-content .card_text {
+    line-height: 1.4;
   }
 
 }
@@ -3928,7 +4132,12 @@ body {
 
 @media (max-width: 480px) {
   .why-choose-us .grid-container .side-card .card-content .card_title {
-    font-size: 15px;
+    font-size: 17px;
+  }
+}
+@media (max-width: 400px) {
+  .why-choose-us .grid-container .side-card .card-content .card_title {
+    font-size: 16px;
   }
 }
 
@@ -3962,6 +4171,21 @@ body {
     font-size: 24px;
     /* Немного уменьшаем заголовки */
     margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .why-choose-us .grid-container .side-card .card-content {}
+
+  .why-choose-us .grid-container .main-card {
+    padding: 0.5rem;
+  }
+
+  .why-choose-us .grid-container .main-card .notification-img {
+    margin-bottom: 1rem;
+  }
+
+  .content .features-cards {
+    gap: 0.3rem !important;
   }
 }
 
@@ -3969,19 +4193,19 @@ body {
   .why-choose-us .grid-container .side-card .card-content .card_title2 {
     font-size: 20px;
     /* Немного уменьшаем заголовки */
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .why-choose-us .grid-container .side-card .card-content .card_title2 {
-    font-size: 14px;
+    font-size: 18.04px;
   }
 }
 
 @media (max-width: 400px) {
   .why-choose-us .grid-container .side-card .card-content .card_title2 {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .why-choose-us .grid-container .side-card .card-content .card_text {
@@ -5081,6 +5305,10 @@ body {
   font-weight: 400;
   color: rgb(255, 255, 255);
   text-align: left;
+  margin: 0;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
 
 }
 
@@ -5161,8 +5389,9 @@ body {
 @media (max-width: 768px) {
   .container-cards .hero-btn-secondary {
     font-size: 15px !important;
-    width: 150px !important;
-    height: 50px !important;
+    width: 140px !important;
+    height: 42px !important;
+    font-size: 12px !important;
   }
 }
 
@@ -5170,7 +5399,8 @@ body {
   .container-cards .hero-btn-secondary {
     font-size: 14px !important;
     width: 140px !important;
-    height: 50px !important;
+    height: 42px !important;
+    font-size: 12px !important;
   }
 }
 
@@ -5197,7 +5427,7 @@ body {
 
 @media(max-width:991px) {
   .cards3-container {
-    margin-top: 0.2rem !important;
+    margin-top: 1rem !important;
   }
 }
 
