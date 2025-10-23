@@ -136,25 +136,25 @@
 }
 
 .hero-section .hero-title-responsive {
-  font-size: 55px !important;
-  font-weight: 700 !important;
+  font-size: 55px;
+  font-weight: 700;
 }
 
 @media (max-width: 1080px) {
   .hero-section .hero-title-responsive {
-    font-size: calc(35px + (100vw - 1080px) * 0.03) !important;
+    font-size: calc(35px + (100vw - 1080px) * 0.03);
   }
 }
 
 @media (max-width: 1293px) {
   .hero-section .hero-title-responsive {
-    font-size: calc(50px + (100vw - 1536px) * 0.03) !important;
+    font-size: calc(50px + (100vw - 1536px) * 0.03);
   }
 }
 
 @media (min-width: 1537px) {
   .hero-section .hero-title-responsive {
-    font-size: calc(55px + (100vw - 1536px) * 0.03) !important;
+    font-size: calc(55px + (100vw - 1536px) * 0.03);
   }
 }
 
@@ -169,19 +169,19 @@
 }
 
 .hero-section .hero-subtitle-responsive {
-  font-size: 30px !important;
-  font-weight: 400 !important;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 @media (max-width: 1080px) {
   .hero-section .hero-subtitle-responsive {
-    font-size: calc(25px + (100vw - 1080px) * 0.015) !important;
+    font-size: calc(25px + (100vw - 1080px) * 0.015);
   }
 }
 
 @media (min-width: 1537px) {
   .hero-section .hero-subtitle-responsive {
-    font-size: calc(30px + (100vw - 1536px) * 0.015) !important;
+    font-size: calc(30px + (100vw - 1536px) * 0.015);
   }
 }
 
@@ -214,7 +214,7 @@
   width: 223px;
   height: 55px;
   border-radius: 20px;
-  font-size: 19px !important;
+  font-size: 19px;
   font-weight: 600 !important;
   text-decoration: none;
 }
@@ -222,7 +222,7 @@
 @media (max-width: 991px) {
   .hero-section .hero-btn-primary {
     border: 1px solid white;
-    font-size: 16px !important;
+    font-size: 16px;
     width: 200px;
     height: 42px;
   }
@@ -231,7 +231,7 @@
 @media (max-width: 768px) {
   .hero-section .hero-btn-primary {
     border: 1px solid white;
-    font-size: 15px !important;
+    font-size: 15px;
     width: 190px;
     height: 42px ;
   }
@@ -240,7 +240,7 @@
 @media (max-width: 400px) {
   .hero-section .hero-btn-primary {
     border: 1px solid white;
-    font-size: 14px !important;
+    font-size: 14px;
     width: 180px;
     height: 42px;
   }
@@ -265,16 +265,16 @@
   width: 174px;
   height: 55px;
   border-radius: 20px;
-  font-size: 19px !important;
+  font-size: 19px;
   font-weight: 600 !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(2px) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
   text-decoration: none;
 }
 
 @media (max-width: 991px) {
   .hero-section .hero-btn-secondary {
-    font-size: 16px !important;
+    font-size: 16px;
     width: 160px;
     height: 42px;
   }
@@ -282,7 +282,7 @@
 
 @media (max-width: 768px) {
   .hero-section .hero-btn-secondary {
-    font-size: 15px !important;
+    font-size: 12px;
     width: 150px;
     height: 42px;
   }
@@ -290,7 +290,7 @@
 
 @media (max-width: 400px) {
   .hero-section .hero-btn-secondary {
-    font-size: 14px !important;
+    font-size: 12px;
     width: 140px;
     height: 42px;
   }
@@ -316,27 +316,27 @@
   padding-right: 0 !important;
 }
 
-.card {
+.hero-section  .card {
   transition: all 0.3s ease;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 3840px) {
-  .card {
+  .hero-section  .card {
     border-radius: 36px;
   }
 }
 
-.card:hover {
+.hero-section  .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
-  border-color: rgba(0, 123, 255, 0.3) !important;
+  border-color: rgba(0, 123, 255, 0.3);
 }
 
-.card .card-body {
+.hero-section .card .card-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -346,26 +346,26 @@
 }
 
 .hero-card-number {
-  font-size: 32px !important;
-  font-weight: 400 !important;
-  color: white !important;
+  font-size: 32px;
+  font-weight: 400;
+  color: white;
 }
 
 @media (min-width: 1537px) {
   .hero-card-number {
-    font-size: calc(32px + (100vw - 1536px) * 0.015) !important;
+    font-size: calc(32px + (100vw - 1536px) * 0.015);
   }
 }
 
 .hero-card-text {
-  color: rgb(165, 165, 165) !important;
-  font-size: 15px !important;
-  font-weight: 400 !important;
+  color: rgb(165, 165, 165);
+  font-size: 15px;
+  font-weight: 400;
 }
 
 @media (min-width: 1537px) {
   .hero-card-text.hero-card-text {
-    font-size: calc(15px + (100vw - 1536px) * 0.008) !important;
+    font-size: calc(15px + (100vw - 1536px) * 0.008);
   }
 }
 
@@ -393,12 +393,12 @@
   /* Переопределяем порядок внутри текстового контента */
   .hero-text-content .hero-subtitle {
     order: 1;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .hero-text-content .hero-title {
     order: 2;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .hero-text-content .hero-buttons {
@@ -408,39 +408,39 @@
 
   /* Центрируем кнопки на мобильных */
   .hero-buttons {
-    justify-content: center !important;
+    justify-content: center;
     flex-wrap: nowrap;
   }
 
   /* Адаптация карточек для мобильных */
   .hero_flex {
     justify-content: center;
-    gap: 1.8rem !important;
+    gap: 1.8rem;
   }
 
   .hero-section .card {
-    width: 150px !important;
-    height: 110px !important;
+    width: 150px;
+    height: 110px;
   }
 
   .hero-card-number {
-    font-size: 20px !important;
+    font-size: 20px;
   }
 
   .hero-card-text {
-    font-size: 12px !important;
+    font-size: 12px;
     line-height: 1.2;
   }
 
   /* Адаптация шрифтов для мобильных */
   .hero-section .hero-title-responsive {
-    font-size: 32px !important;
+    font-size: 32px;
     line-height: 1.2;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 18px !important;
-    margin-bottom: 0rem !important;
+    font-size: 18px;
+    margin-bottom: 0rem;
   }
 }
 
@@ -449,78 +449,78 @@
   .hero_flex {
     flex-direction: column;
     align-items: center;
-    gap: 1.1rem !important;
+    gap: 1.1rem;
   }
 
   .hero-section .card {
-    width: 140px !important;
-    height: 100px !important;
+    width: 140px;
+    height: 100px;
   }
 
   .hero-buttons {
     align-items: stretch;
-    gap: 1rem !important;
+    gap: 1rem;
     width: 100%;
   }
 
   .hero-btn-primary,
   .hero-btn-secondary {
-    width: 100% !important;
-    font-size: 14px !important;
+    width: 100%;
+    font-size: 12px;
     flex: 1;
     min-width: 0;
   }
 
   .hero-section .hero-title-responsive {
-    font-size: 28px !important;
+    font-size: 28px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 425px) {
   .hero-section .hero-title-responsive {
-    font-size: 25px !important;
+    font-size: 25px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 400px) {
   .hero-section .hero-title-responsive {
-    font-size: 22px !important;
+    font-size: 22px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 13px !important;
+    font-size: 13px;
   }
 }
 
 /* Для очень больших мобильных (планшеты в портретной ориентации) */
 @media (min-width: 768px) and (max-width: 991px) {
   .hero-section .card {
-    width: 170px !important;
-    height: 130px !important;
+    width: 170px;
+    height: 130px;
   }
 
   .hero-card-number {
-    font-size: 28px !important;
+    font-size: 28px;
   }
 
   .hero-card-text {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 
   .hero-section .hero-title-responsive {
-    font-size: 40px !important;
+    font-size: 40px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 22px !important;
+    font-size: 22px;
   }
 }
 
@@ -1349,7 +1349,7 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   object-fit: fill;
-  flex-shrink: 0 !important;
+  flex-shrink: 0;
 }
 
 .tournament-footer-mobile .carousel-slide .footer-left .tournament-info {
@@ -1463,19 +1463,19 @@
 
 @media (max-width: 1080px) {
   .hero-section .hero-title-responsive {
-    font-size: 2.1875rem !important;
+    font-size: 2.1875rem;
   }
 }
 
 @media (max-width: 1293px) {
   .hero-section .hero-title-responsive {
-    font-size: 3.125rem !important;
+    font-size: 3.125rem;
   }
 }
 
 @media (min-width: 1537px) {
   .hero-section .hero-title-responsive {
-    font-size: 3.4375rem !important;
+    font-size: 3.4375rem;
   }
 }
 
@@ -1487,19 +1487,19 @@
 
 @media (max-width: 1080px) {
   .hero-section .hero-subtitle-responsive {
-    font-size: 1.5625rem !important;
+    font-size: 1.5625rem;
   }
 }
 
 @media (min-width: 1537px) {
   .hero-section .hero-subtitle-responsive {
-    font-size: 1.875rem !important;
+    font-size: 1.875rem;
   }
 }
 
 @media (min-width: 1537px) {
   .hero-section .btn {
-    font-size: 1.1875rem !important;
+    font-size: 1.1875rem;
     width: 13.9375rem;
     height: 3.4375rem;
   }
@@ -1530,14 +1530,16 @@
   .hero-section .hero-btn-primary {
     border: 1px solid white;
     font-size: 15px;
-    width: 140px;
+    width: 150px;
     height: 42px;
+    border-radius: 16px;
   }
 
   .hero-section .hero-btn-secondary {
-    font-size: 15px !important;
-    width: 140px;
+    font-size: 12px;
+    width: 150px;
     height: 42px;
+    border-radius: 16px;
   }
 }
 
@@ -1582,7 +1584,7 @@
 
 @media (min-width: 1537px) {
   .hero-card-text.hero-card-text {
-    font-size: 0.9375rem !important;
+    font-size: 0.9375rem;
   }
 }
 
@@ -1608,12 +1610,12 @@
 
   .hero-text-content .hero-subtitle {
     order: 1;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .hero-text-content .hero-title {
     order: 2;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .hero-text-content .hero-buttons {
@@ -1622,37 +1624,37 @@
   }
 
   .hero-buttons {
-    justify-content: center !important;
+    justify-content: center;
     flex-wrap: nowrap;
   }
 
   .hero_flex {
     justify-content: center;
-    gap: 1.8rem !important;
+    gap: 1.8rem;
   }
 
   .hero-section .card {
-    width: 150px !important;
-    height: 110px !important;
+    width: 150px;
+    height: 110px;
   }
 
   .hero-card-number {
-    font-size: 20px !important;
+    font-size: 20px;
   }
 
   .hero-card-text {
-    font-size: 12px !important;
+    font-size: 12px;
     line-height: 1.2;
   }
 
   .hero-section .hero-title-responsive {
-    font-size: 32px !important;
+    font-size: 32px;
     line-height: 1.2;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 18px !important;
-    margin-bottom: 0rem !important;
+    font-size: 18px;
+    margin-bottom: 0rem;
   }
 }
 
@@ -1660,78 +1662,78 @@
   .hero_flex {
     flex-direction: column;
     align-items: center;
-    gap: 1.1rem !important;
+    gap: 1.1rem;
   }
 
   .hero-section .card {
-    width: 140px !important;
-    height: 100px !important;
+    width: 140px;
+    height: 100px;
   }
 
   .hero-buttons {
     /* align-items: stretch; */
-    gap: 1rem !important;
+    gap: 1rem;
     /* width: 100%; */
   }
 
-  .hero-buttons  .hero-btn-primary,
+  .hero-section .hero-buttons  .hero-btn-primary,
   .hero-btn-secondary {
-    width: 140px;
+    width: 150px;
     height: 42px;
-    font-size: 14px;
+    font-size: 12px;
     flex: 1;
     min-width: 0;
   }
 
   .hero-section .hero-title-responsive {
-    font-size: 28px !important;
+    font-size: 28px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 425px) {
   .hero-section .hero-title-responsive {
-    font-size: 25px !important;
+    font-size: 25px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 400px) {
   .hero-section .hero-title-responsive {
-    font-size: 22px !important;
+    font-size: 22px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 13px !important;
+    font-size: 13px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .hero-section .card {
-    width: 170px !important;
-    height: 130px !important;
+    width: 170px;
+    height: 130px;
   }
 
   .hero-card-number {
-    font-size: 28px !important;
+    font-size: 28px;
   }
 
   .hero-card-text {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 
   .hero-section .hero-title-responsive {
-    font-size: 40px !important;
+    font-size: 40px;
   }
 
   .hero-section .hero-subtitle-responsive {
-    font-size: 22px !important;
+    font-size: 22px;
   }
 }
 

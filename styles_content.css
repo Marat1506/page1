@@ -14,8 +14,8 @@
 
 @media (min-width: 1537px) {
   .content {
-    padding-left: calc(3.5rem + (100vw - 1536px) * 0.1) !important;
-    padding-right: calc(3.5rem + (100vw - 1536px) * 0.1) !important;
+    padding-left: calc(3.5rem + (100vw - 1536px) * 0.1);
+    padding-right: calc(3.5rem + (100vw - 1536px) * 0.1);
   }
 }
 
@@ -29,12 +29,12 @@
   padding: 3rem 2rem;
   gap: 2rem;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .content .content_wostour:hover {
   box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
-  border-color: rgba(0, 123, 255, 0.3) !important;
+  border-color: rgba(0, 123, 255, 0.3);
 }
 
 .content .content_wostour .container_content_wostour_chat {
@@ -88,6 +88,11 @@
 
 .content .content_wostour a:hover {
   box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+.content .features-cards {
+  display: flex;
+  align-items: stretch;
 }
 
 .content .features-cards .feature-card-footer .medal {
@@ -149,7 +154,7 @@
 }
 
 .content .features-cards .feature-card .feature-card-footer {
-  margin-top: 4rem;
+  margin-top: auto;
   padding-top: 1rem;
   flex-shrink: 0;
   height: 70px;
@@ -419,6 +424,10 @@
   align-items: center;
 }
 
+.container-cards .container-cards-title br {
+  display: none;
+}
+
 .cards3-container {
   width: 100%;
   margin-top: 1.5rem;
@@ -442,10 +451,10 @@
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.cards3 .card:hover {
+/* .cards3 .card:hover {
   box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
   border-color: rgba(0, 123, 255, 0.3) !important;
-}
+} */
 
 .cards3 .card .card-img-top {
   width: 100%;
@@ -457,12 +466,12 @@
 
 .container-cards .hero-btn-secondary {
   border: 1px solid white;
-  width: 144px !important;
-  height: 42px !important;
+  width: 207px;
+  height: 55px;
   border-radius: 20px;
-  font-size: 19px !important;
-  font-weight: 600 !important;
-  background-color: rgba(255, 255, 255, 0.15) !important;
+  font-size: 19px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.15);
   text-decoration: none;
   transition: box-shadow 0.3s ease;
 }
@@ -473,41 +482,49 @@
 
 @media (max-width: 991px) {
   .container-cards .hero-btn-secondary {
-    font-size: 16px !important;
-    width: 160px !important;
-    height: 50px !important;
+    font-size: 16px;
+    width: 140px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
   }
 }
 
 @media (max-width: 768px) {
   .container-cards .hero-btn-secondary {
-    font-size: 15px !important;
-    width: 140px !important;
-    height: 42px !important;
-    font-size: 12px !important;
-    border-radius: 16px;
+    font-size: 12px;
+    width: 140px;
+    height: 42px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+
   }
 }
 
 @media (max-width: 400px) {
   .container-cards .hero-btn-secondary {
-    font-size: 14px !important;
-    width: 140px !important;
-    height: 42px !important;
-    font-size: 12px !important;
+    font-size: 12px;
+    width: 140px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
   }
 }
 
 @media (min-width: 1537px) {
   .container-cards .hero-btn-secondary {
-    width: 10.875rem !important;
-    height: 3.4375rem !important;
-    font-size: 1.1875rem !important;
+    width: 220px;
+    height: 60px;
+    font-size: 20px;
   }
 }
 
 @media (min-width: 3840px) {
   .container-cards .hero-btn-secondary {
+    width: 280px;
+    height: 75px;
+    font-size: 24px;
     border-radius: 44px;
   }
 }
@@ -528,9 +545,9 @@
   overflow-wrap: break-word;
 
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  /* Ограничение в 3 строки */
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  /* Ограничение в 4 строки */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -540,14 +557,19 @@
   /* Разрешить переносы строк */
   line-height: 1.2;
   /* Межстрочный интервал */
-  max-height: 3.6em;
-  /* Фиксированная высота для 3 строк */
+  max-height: 4.8em;
+  /* Фиксированная высота для 4 строк */
   min-height: 2.4em;
 }
 
 .cards3 .card .card-body .card-text {
   font-size: clamp(12px, 0.9vw, 18px);
   color: rgba(165, 165, 165, 1);
+  margin-bottom: 0;
+}
+
+.cards3 .card .card-body .card_date {
+  margin-top: 1rem;
 }
 
 /* Media Queries for Content */
@@ -604,7 +626,7 @@
 
 @media (max-width: 991px) {
   .content .content_wostour .wostour-text p {
-    font-size: 18.04px !important;
+    font-size: 18.04px;
     margin-bottom: 0.5rem;
   }
 
@@ -623,6 +645,7 @@
 
   .content .content_wostour .wostour-text .p_one {
     line-height: 1.2;
+    font-size: 18px;
   }
 
   .content .features-cards .feature-card {
@@ -641,43 +664,43 @@
 
 @media (min-width: 1080px) {
   .content .content_wostour .wostour-text p {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 }
 
 @media (min-width: 1537px) {
   .content .content_wostour .wostour-text p {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 3840px) {
   .content .content_wostour .wostour-text p {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 991px) {
   .content .content_wostour .wostour-text p:nth-child(2) {
-    font-size: 12px !important;
+    font-size: 12px;
   }
 }
 
 @media (min-width: 1080px) {
   .content .content_wostour .wostour-text p:nth-child(2) {
-    font-size: 0.9375rem !important;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 1537px) {
   .content .content_wostour .wostour-text p:nth-child(2) {
-    font-size: 1.125rem !important;
+    font-size: 1.125rem;
   }
 }
 
 @media (min-width: 3840px) {
   .content .content_wostour .wostour-text p:nth-child(2) {
-    font-size: 1.125rem !important;
+    font-size: 1.125rem;
   }
 }
 
@@ -697,18 +720,18 @@
 
 @media (min-width: 1537px) {
   .content .content_wostour a {
-    width: 15.6875rem !important;
-    height: 3.4375rem !important;
-    font-size: 1.1875rem !important;
+    width: 15.6875rem;
+    height: 3.4375rem;
+    font-size: 1.1875rem;
   }
 }
 
 @media (min-width: 3840px) {
   .content .content_wostour a {
-    width: 15.6875rem !important;
-    height: 3.4375rem !important;
-    font-size: 1.1875rem !important;
-    border-radius: 1.25rem !important;
+    width: 15.6875rem;
+    height: 3.4375rem;
+    font-size: 1.1875rem;
+    border-radius: 1.25rem;
   }
 }
 
@@ -746,7 +769,7 @@
 @media (max-width: 991px) {
   .content .features-cards {
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
   }
 }
 
@@ -759,32 +782,34 @@
 @media (min-width: 3840px) {
   .content .features-cards .feature-card {
     min-height: 18.75rem;
-    border-radius: 60px !important;
-    padding: 4rem !important;
+    border-radius: 60px;
+    padding: 4rem;
   }
 }
 
 @media (min-width: 1080px) {
   .content .features-cards .feature-card p:first-child {
-    font-size: 1.625rem !important;
+    font-size: 1.625rem;
+    color: white;
   }
 }
 
 @media (min-width: 1537px) {
   .content .features-cards .feature-card p:first-child {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
   }
 }
 
 @media (min-width: 3840px) {
   .content .features-cards .feature-card p:first-child {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
   }
 }
 
 @media (max-width: 991px) {
   .content .features-cards .feature-card p:first-child {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
+    color: white;
   }
 
   .content .features-cards .feature-card .feature-card-footer {
@@ -795,49 +820,49 @@
 
 @media (min-width: 1537px) {
   .content .features-cards .feature-card p:nth-child(2) {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 3840px) {
   .content .features-cards .feature-card p:nth-child(2) {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 991px) {
   .content .features-cards .feature-card p:nth-child(2) {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 576px) {
   .content .features-cards .feature-card p:nth-child(2) {
-    font-size: 11.16px !important;
+    font-size: 11.16px;
   }
 }
 
 @media (min-width: 1537px) {
   .content .features-cards .feature-card .bi-arrow-right {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 1920px) {
   .content .features-cards .feature-card .bi-arrow-right {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 2560px) {
   .content .features-cards .feature-card .bi-arrow-right {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 3840px) {
   .content .features-cards .feature-card .bi-arrow-right {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 }
 
@@ -925,19 +950,19 @@
 
 @media (min-width: 3840px) {
   .why-choose-us .grid-container .main-card {
-    border-radius: 60px !important;
+    border-radius: 60px;
   }
 }
 
 @media (min-width: 2560px) {
   .why-choose-us .grid-container .main-card {
-    border-radius: 40px !important;
+    border-radius: 40px;
   }
 }
 
 @media (min-width: 1920px) {
   .why-choose-us .grid-container .main-card {
-    border-radius: 20px !important;
+    border-radius: 20px;
   }
 }
 
@@ -979,13 +1004,13 @@
 
 @media (min-width: 3840px) {
   .why-choose-us .grid-container .side-card {
-    border-radius: 50px !important;
+    border-radius: 50px;
   }
 }
 
 @media (min-width: 2560px) {
   .why-choose-us .grid-container .side-card {
-    border-radius: 30px !important;
+    border-radius: 30px;
   }
 }
 
@@ -1027,61 +1052,61 @@
 
 @media (max-width: 768px) {
   .why-choose-us .grid-container .side-card .container_moni1 .img-wrapper img.moni {
-    max-width: 150px !important;
+    max-width: 150px;
   }
 
   .why-choose-us .grid-container .side-card .container_moni2 .img-wrapper img.moni {
-    max-width: 150px !important;
+    max-width: 150px;
   }
 }
 
 @media (max-width: 480px) {
   .why-choose-us .grid-container .side-card .container_moni1 .img-wrapper img.moni {
-    max-width: 125px !important;
+    max-width: 125px;
   }
 
   .why-choose-us .grid-container .side-card .container_moni2 .img-wrapper img.moni {
-    max-width: 125px !important;
+    max-width: 125px;
   }
 }
 
 @media (min-width: 3840px) {
   .why-choose-us .grid-container .side-card .container_moni1 img.moni {
-    max-width: 800px !important;
+    max-width: 800px;
   }
 
   .why-choose-us .grid-container .side-card .container_moni2 img.moni {
-    max-width: 800px !important;
+    max-width: 800px;
   }
 }
 
 @media (min-width: 2560px) {
   .why-choose-us .grid-container .side-card .container_moni1 img.moni {
-    max-width: 400px !important;
+    max-width: 400px;
   }
 
   .why-choose-us .grid-container .side-card .container_moni2 img.moni {
-    max-width: 400px !important;
+    max-width: 400px;
   }
 }
 
 @media (min-width: 1080px) {
   .why-choose-us .grid-container .side-card .container_moni1 img.moni {
-    max-width: 200px !important;
+    max-width: 200px;
   }
 
   .why-choose-us .grid-container .side-card .container_moni2 img.moni {
-    max-width: 200px !important;
+    max-width: 200px;
   }
 }
 
 @media (max-width: 1080px) {
   .why-choose-us .grid-container .side-card .container_moni1 img.moni {
-    max-width: 200px !important;
+    max-width: 200px;
   }
 
   .why-choose-us .grid-container .side-card .container_moni2 img.moni {
-    max-width: 200px !important;
+    max-width: 200px;
   }
 }
 
@@ -1149,7 +1174,7 @@
   }
 
   .content .features-cards {
-    gap: 0.3rem !important;
+    gap: 0.3rem;
   }
 }
 
@@ -1246,8 +1271,12 @@
     text-align: left;
   }
 
+  .container-cards .container-cards-title br {
+    display: block;
+  }
+
   .cards3-container {
-    margin-top: 1rem !important;
+    margin-top: 1rem;
   }
 }
 
@@ -1274,7 +1303,7 @@
   }
 
   .cards3 .card {
-    border-radius: 30px !important;
+    border-radius: 30px;
   }
 
   .cards3 .card .card-img-top {
@@ -1289,7 +1318,7 @@
   }
 
   .cards3 .card {
-    border-radius: 35px !important;
+    border-radius: 35px;
   }
 
   .cards3 .card .card-img-top {
@@ -1300,7 +1329,7 @@
 @media (max-width: 768px) {
   .cards3 {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .cards3 .card {
@@ -1328,6 +1357,9 @@
   .cards3 .card .card-body .card-text {
     font-size: 7px;
     margin-bottom: 0;
+  }
+
+  .cards3 .card .card-body .card_date{
     margin-top: 0.4rem;
   }
 }

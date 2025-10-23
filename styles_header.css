@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(100, 105, 105, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
   will-change: transform;
@@ -28,12 +28,12 @@
 }
 
 .header.header-responsive {
-  padding-left: 3.5rem !important;
-  padding-right: 3.5rem !important;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
 }
 
 .header .navbar {
-  padding: 0 !important;
+  padding: 0;
 }
 
 .header .navbar .container-fluid {
@@ -74,10 +74,10 @@
 }
 
 .header .navbar-nav .nav-link {
-  color: white !important;
+  color: white;
   text-decoration: none;
-  background: none !important;
-  border: none !important;
+  background: none;
+  border: none;
   transition: opacity 0.3s ease;
   padding: 0.5rem 0;
   position: relative;
@@ -102,17 +102,17 @@
 .header .right-actions .dropdown .drop_btn_flag {
   margin: 0;
   padding: 0;
-  background: none !important;
-  border: none !important;
+  background: none;
+  border: none;
 }
 
 .header .right-actions .dropdown .drop_btn_flag:hover,
 .header .right-actions .dropdown .drop_btn_flag:focus,
 .header .right-actions .dropdown .drop_btn_flag:active {
-  background: none !important;
-  color: inherit !important;
-  box-shadow: none !important;
-  transform: none !important;
+  background: none;
+  color: inherit;
+  box-shadow: none;
+  transform: none;
 }
 
 .header .right-actions .dropdown .dropdown-toggle::after {
@@ -181,7 +181,7 @@
 
 .header .right-actions .dropdown-menu .dropdown-item:first-child {
   position: relative;
-  border-bottom: none !important;
+  border-bottom: none;
 }
 
 .headerv.right-actions .dropdown-menu .dropdown-item:first-child::after {
@@ -191,7 +191,7 @@
   left: 10px;
   right: 10px;
   height: 2px;
-  background-color: rgba(217, 217, 217, 0.25) !important;
+  background-color: rgba(217, 217, 217, 0.25);
 }
 
 .header .right-actions .dropdown-item a {
@@ -251,7 +251,7 @@
   padding: 0;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
-  border: none !important;
+  border: none;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -275,7 +275,7 @@
 }
 
 .header .right-actions .settings-dropdown .dropdown-item {
-  color: rgba(165, 165, 165, 1) !important;
+  color: rgba(165, 165, 165, 1);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -285,7 +285,7 @@
 }
 
 .header .right-actions .settings-dropdown .dropdown-item a {
-  color: white !important;
+  color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -303,7 +303,7 @@
 }
 
 .header .right-actions .settings-dropdown .dropdown-item:hover {
-  background: #333 !important;
+  background: #333;
 }
 
 .header .right-actions .settings-dropdown .dropdown-item:first-child::after {
@@ -311,7 +311,7 @@
 }
 
 .header .right-actions .settings-dropdown .dropdown-item:not(:last-child) {
-  border-bottom: 1px solid #333 !important;
+  border-bottom: 1px solid #333;
 }
 
 .header .right-actions .settings-dropdown .dropdown-item .dropdown-item_exit {
@@ -325,10 +325,10 @@
 }
 
 .header .header-btn {
-  width: 135px !important;
-  height: 40px !important;
+  width: 135px;
+  height: 40px;
   border-radius: 20px;
-  font-size: 14px !important;
+  font-size: 14px;
   padding-top: 0.5rem;
   transition: box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   border: 2px solid transparent;
@@ -344,7 +344,7 @@
 
 .header .header-btn:hover {
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-  color: black !important;
+  color: black;
   border-color: white;
 }
 
@@ -430,7 +430,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none !important;
+  border: none;
   background-color: rgba(39, 40, 40, 1);
   border-radius: 22px;
   transition: background-color 0.3s ease;
@@ -458,7 +458,7 @@
 .dark-btn-inner {
   width: 100%;
   height: 100%;
-  border: none !important;
+  border: none;
   background: transparent;
   color: #fff;
   font-weight: 500;
@@ -586,10 +586,10 @@
 }
 
 .form-control:focus {
-  background-color: transparent !important;
-  color: #fff !important;
-  border-color: #1e63ff !important;
-  box-shadow: none !important;
+  background-color: transparent;
+  color: #fff;
+  border-color: #1e63ff;
+  box-shadow: none;
 }
 
 .submit-btn {
@@ -639,17 +639,17 @@
 
 @media (min-width: 1537px) {
   .header.header-responsive {
-    padding-left: calc(3.5rem + (100vw - 1536px) * 0.1) !important;
-    padding-right: calc(3.5rem + (100vw - 1536px) * 0.1) !important;
+    padding-left: calc(3.5rem + (100vw - 1536px) * 0.1);
+    padding-right: calc(3.5rem + (100vw - 1536px) * 0.1);
   }
 }
 
 @media (max-width: 991.98px) {
   .header.header-responsive {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -667,7 +667,7 @@
 
 @media (min-width: 1537px) {
   .header .navbar .container-fluid .logo-container .header-logo {
-    max-height: 2.25rem !important;
+    max-height: 2.25rem;
   }
 }
 
@@ -691,9 +691,9 @@
 
 @media (min-width: 1537px) {
   .header .header-btn {
-    width: 10.9375rem !important;
-    height: 2.5rem !important;
-    font-size: 0.875rem !important;
+    width: 10.9375rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -711,7 +711,7 @@
 
 @media (min-width: 992px) {
   .header .mobile-menu-btn {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -849,7 +849,7 @@
   .info_main_block_one .dropdown-item {
     padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(165, 165, 165, 1) !important;
+    color: rgba(165, 165, 165, 1);
   }
 
   .info_main_block_one .dropdown-item:last-child {
@@ -857,7 +857,7 @@
   }
 
   .info_main_block_one .dropdown-item a {
-    color: inherit !important;
+    color: inherit;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -887,8 +887,8 @@
   .info_main_block_one .settings-dropdown.mobile-version .dropdown-item {
     padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: white !important;
-    background: transparent !important;
+    color: white;
+    background: transparent;
   }
 
   .info_main_block_one .settings-dropdown.mobile-version .dropdown-item:last-child {
@@ -896,7 +896,7 @@
   }
 
   .info_main_block_one .settings-dropdown.mobile-version .dropdown-item a {
-    color: inherit !important;
+    color: inherit;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -929,7 +929,7 @@
     flex-direction: column;
     margin-top: 2rem;
     align-items: start;
-    gap: 0 !important;
+    gap: 0;
   }
 
   .dark-auth-toggle {
@@ -948,7 +948,7 @@
   .dark-auth-toggle .dark-btn-inner {
     width: 100%;
     height: 100%;
-    border: none !important;
+    border: none;
     background: transparent;
     color: #fff;
     font-weight: 500;
@@ -971,12 +971,12 @@
   }
 
   .dark-toggle-btn.active {
-    background-color: #000 !important;
+    background-color: #000;
     z-index: 3;
   }
 
   .dark-toggle-btn.active .dark-btn-inner {
-    color: #fff !important;
+    color: #fff;
   }
 
   .header .navbar-nav .nav-item .dropdown {
@@ -985,7 +985,7 @@
 
   .header .navbar-nav .nav-item .dropdown .drop-btn {
     font-size: 13px;
-    color: white !important;
+    color: white;
     padding: 0;
     border: none;
     background: transparent;
@@ -1011,27 +1011,27 @@
     align-items: start;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    color: rgba(165, 165, 165, 1) !important;
+    color: rgba(165, 165, 165, 1);
   }
 
   .header .navbar-nav .nav-item .nav-link:first-child {
-    color: rgba(165, 165, 165, 1) !important;
+    color: rgba(165, 165, 165, 1);
   }
 
   .header .navbar-nav .main-footer .nav-item .nav-link:first-child {
-    color: white !important;
+    color: white;
   }
 
   .header .navbar-nav .main-footer .nav-item .nav-link {
-    color: white !important;
+    color: white;
   }
 
   .header .navbar-nav .nav-group .nav-item .nav-link:first-child {
-    color: white !important;
+    color: white;
   }
 
   .header .navbar-nav .main-footer .nav-group .nav-item .nav-link:first-child {
-    color: white !important;
+    color: white;
   }
 
   .header .navbar-nav .nav-group {
@@ -1097,10 +1097,10 @@
   }
 
   .header .right-actions .header-btn {
-    width: 100% !important;
-    height: 50px !important;
+    width: 100%;
+    height: 50px;
     border-radius: 25px;
-    font-size: 22px !important;
+    font-size: 22px;
     font-weight: 600;
     background: white;
     color: black;
@@ -1127,6 +1127,9 @@
     justify-content: space-between;
     width: 100%;
   }
+  .sidebar_footer .sidebar_footer_main a {
+    text-decoration: none;
+  }
 
   .sidebar_footer .sidebar_footer_title {
     padding-left: 1.5rem;
@@ -1144,23 +1147,26 @@
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(1) .hero-btn-secondary {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 81px;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(2) .hero-btn-secondary {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 114px;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(3) .hero-btn-secondary {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 120px;
   }
 
   .navbar-collapse,
   body {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 }
 
@@ -1188,11 +1194,11 @@
   }
 
   .auth-toggle {
-    justify-content: flex-start !important;
-    width: 100% !important;
-    max-width: 640px !important;
-    margin-bottom: 0 !important;
-    padding: 0 !important;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 640px;
+    margin-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -1233,18 +1239,18 @@
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(1) .hero-btn-secondary {
-    padding-left: 1.6rem !important;
-    padding-right: 1.6rem !important;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(2) .hero-btn-secondary {
-    padding-left: 2.2rem !important;
-    padding-right: 1.2rem !important;
+    padding-left: 2.2rem;
+    padding-right: 1.2rem;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(3) .hero-btn-secondary {
-    padding-left: 2.2rem !important;
-    padding-right: 2.2rem !important;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
   }
 }
 
@@ -1253,14 +1259,6 @@
     font-size: 12px;
   }
 
-  .dark-toggle-btn + .dark-toggle-btn {
-    transform: translateX(-0rem);
-  }
-
-  .dark-auth-toggle {
-    margin-left: 0;
-    margin-right: 0;
-  }
    .dark-btn-inner {
     border-radius: 13px;
   }
@@ -1286,18 +1284,18 @@
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(1) .hero-btn-secondary {
-    padding-left: 1.4rem !important;
-    padding-right: 1.4rem !important;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(2) .hero-btn-secondary {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(3) .hero-btn-secondary {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .header .navbar-collapse .info_main .info_main_block_one_profile .info_main_block_one_profile_text {
@@ -1340,7 +1338,7 @@
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.15);
     white-space: nowrap;
-    font-size: 12px !important;
+    font-size: 12px;
     font-weight: 400;
     height: 32px;
     display: flex;
@@ -1349,18 +1347,18 @@
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(1) .hero-btn-secondary {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(2) .hero-btn-secondary {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .sidebar_footer .sidebar_footer_main>a:nth-child(3) .hero-btn-secondary {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
