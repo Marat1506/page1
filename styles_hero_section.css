@@ -231,7 +231,7 @@
 @media (max-width: 768px) {
   .hero-section .hero-btn-primary {
     border: 1px solid white;
-    font-size: 15px;
+    font-size: 12px;
     width: 190px;
     height: 42px ;
   }
@@ -240,7 +240,7 @@
 @media (max-width: 400px) {
   .hero-section .hero-btn-primary {
     border: 1px solid white;
-    font-size: 14px;
+    font-size: 12px;
     width: 180px;
     height: 42px;
   }
@@ -546,8 +546,13 @@
 
 @media (max-width: 991.98px) {
   .tournament-footer {
-    position: relative;
-    /* Изменяем с sticky на relative для мобильных, чтобы логика JS работала корректно */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    /* Позиционируем относительно dvh для адаптивности к адресной строке */
+    bottom: calc(100vh - 100dvh);
   }
 }
 
@@ -1529,7 +1534,7 @@
 @media (max-width: 768px) {
   .hero-section .hero-btn-primary {
     border: 1px solid white;
-    font-size: 15px;
+    font-size: 12px;
     width: 150px;
     height: 42px;
     border-radius: 16px;
@@ -1676,14 +1681,14 @@
     /* width: 100%; */
   }
 
-  .hero-section .hero-buttons  .hero-btn-primary,
+  /* .hero-section .hero-buttons  .hero-btn-primary,
   .hero-btn-secondary {
     width: 150px;
     height: 42px;
     font-size: 12px;
     flex: 1;
     min-width: 0;
-  }
+  } */
 
   .hero-section .hero-title-responsive {
     font-size: 28px;
