@@ -325,13 +325,41 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // });
 
+    /* 
+    Пример использования стилей ошибок для форм авторизации:
+    
+    // Показать ошибку для конкретного поля:
+    const loginInput = document.querySelector('#login input[type="text"]');
+    loginInput.classList.add('error');
+    
+    // Показать общее уведомление об ошибке (вынесено за пределы auth-box):
+    const errorMessage = document.querySelector('.autorization .error-message');
+    errorMessage.classList.remove('d-none');
+    errorMessage.classList.add('show');
+    
+    // Скрыть ошибки:
+    loginInput.classList.remove('error');
+    errorMessage.classList.add('d-none');
+    errorMessage.classList.remove('show');
+    
+    // Для всех полей активной формы входа:
+    const loginInputs = document.querySelectorAll('#login .form-control');
+    loginInputs.forEach(input => input.classList.add('error'));
+    
+    // Для всех полей формы регистрации:
+    const registerInputs = document.querySelectorAll('#register .form-control');
+    registerInputs.forEach(input => input.classList.add('error'));
+    
+    // Универсальная функция для показа ошибок:
+    function showFormError(formId) {
+        const inputs = document.querySelectorAll(`#${formId} .form-control`);
+        inputs.forEach(input => input.classList.add('error'));
+        document.querySelector('.autorization .error-message').classList.add('show');
+    }
+    */
+
     // Логика для sticky-карусели на мобильных устройствах
     function initStickyCarousel() {
-        const isMobile = window.innerWidth <= 991;
-        if (!isMobile) {
-            return;
-        }
-
         const header = document.querySelector('.header');
         const carousel = document.querySelector('.tournament-footer');
         const mainWithBg = document.querySelector('.main-with-bg');
@@ -343,6 +371,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let isCarouselSticky = false;
 
         function updateCarouselPosition() {
+            // Проверяем размер экрана при каждом вызове
+            const isMobile = window.innerWidth <=550;
+            
+            // Если не мобильная версия, не применяем sticky логику
+            if (!isMobile) {
+                return;
+            }
+
             const headerRect = header.getBoundingClientRect();
             const carouselRect = carousel.getBoundingClientRect();
             const mainWithBgRect = mainWithBg.getBoundingClientRect();
@@ -396,9 +432,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', () => {
-            const newIsMobile = window.innerWidth <= 991;
-            if (!newIsMobile && isCarouselSticky) {
-                // Сброс при переходе на десктоп
+            const isMobile = window.innerWidth <= 991;
+            
+            if (!isMobile) {
+                // Переключились на десктоп - полностью сбрасываем все стили
                 carousel.style.position = '';
                 carousel.style.bottom = '';
                 carousel.style.top = '';
@@ -406,14 +443,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 carousel.style.right = '';
                 carousel.style.width = '';
                 isCarouselSticky = false;
-            } else if (newIsMobile) {
-                // Пересчитываем при изменении размера в мобильном режиме
+            } else {
+                // Мобильная версия - пересчитываем позицию
                 updateCarouselPosition();
             }
         });
         
-        // Инициализация
-        updateCarouselPosition();
+        // Инициализация только для мобильной версии
+        const isMobile = window.innerWidth <= 550;
+        if (isMobile) {
+            updateCarouselPosition();
+        }
     }
 
     // Запускаем логику sticky-карусели
