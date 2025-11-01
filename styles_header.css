@@ -1097,7 +1097,7 @@
   .header .navbar-nav {
     width: 100%;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 1rem;
     align-items: start;
     gap: 0;
   }
@@ -1324,7 +1324,7 @@
   }
 
   .sidebar_footer {
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 100%;
   }
 
