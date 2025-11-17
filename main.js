@@ -402,12 +402,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updateCarouselPosition() {
             // Проверяем размер экрана при каждом вызове
-            const isMobile = window.innerWidth <=550;
+            // const isMobile = window.innerWidth <=550;
             
-            // Если не мобильная версия, не применяем sticky логику
-            if (!isMobile) {
-                return;
-            }
+            // // Если не мобильная версия, не применяем sticky логику
+            // if (!isMobile) {
+            //     return;
+            // }
 
             const headerRect = header.getBoundingClientRect();
             const carouselRect = carousel.getBoundingClientRect();
